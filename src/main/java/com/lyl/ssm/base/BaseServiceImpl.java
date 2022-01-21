@@ -91,7 +91,7 @@ public abstract  class BaseServiceImpl<T> implements BaseService<T>{
      * 根据主键获取一个实体
      */  
 	public T load(Serializable id) {
-		return this.getBaseDao().load(id);
+		return this.getBaseDao().getById(id);
 	}
 	
 	/**
