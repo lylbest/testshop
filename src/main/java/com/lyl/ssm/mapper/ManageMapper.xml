@@ -10,14 +10,14 @@
     </resultMap>
 
     <!--    声明数据库字段-->
-    <sql id="manage_field">
+    <sql id="Manage_field">
         id,userName,passWord,realName
     </sql>
     <!--    实体类属性-->
-    <sql id="manage_insert">
+    <sql id="Manage_insert">
         #{id},#{useName},#{passWord},#{realName}
     </sql>
-    <sql id="manage_where">
+    <sql id="Manage_where">
         <if test="id!=null">
             and id=#{id}
         </if>
@@ -32,7 +32,7 @@
         </if>
     </sql>
 <!--    更新时条件-->
-    <sql id="manage_update">
+    <sql id="Manage_update">
         <if test="userName!=null">
             userName=#{userName},
         </if>
@@ -47,9 +47,9 @@
     <!--    新增，参数：实体类，返回值：主键-->
     <insert id="insert" parameterType="com.lyl.ssm.po.Manage" useGeneratedKeys="true" keyProperty="id">
         insert into manage(
-        <include refid="manage_field"/>
+        <include refid="Manage_field"/>
         )values (
-        <include refid="manage_insert"/>
+        <include refid="Manage_insert"/>
         )
     </insert>
     <!--    根据实体主键删除一个实体-->
@@ -60,13 +60,13 @@
 
     <delete id="deleteByEntity" parameterType="com.lyl.ssm.po.Manage">
         delete from manage where 1=1
-        <include refid="manage_where"/>
+        <include refid="Manage_where"/>
     </delete>
 
     <!--    通过map删除-->
     <delete id="deleteByMap" parameterType="java.util.HashMap">
         delete from manage where 1=1
-        <include refid="manage_where"/>
+        <include refid="Manage_where"/>
     </delete>
 
 
@@ -74,17 +74,17 @@
     <update id="update" parameterType="com.lyl.ssm.po.Manage">
         update manage
         <set>
-            <include refid="manage_update"/>
+            <include refid="Manage_update"/>
         </set>
         where 1=1
-        <include refid="manage_where"/>
+        <include refid="Manage_where"/>
     </update>
 
     <!--    通过id进行修改-->
     <update id="updateById" parameterType="com.lyl.ssm.po.Manage">
         update manage
         <set>
-            <include refid="manage_update"/>
+            <include refid="Manage_update"/>
         </set>
         where id=#{id}
     </update>
@@ -92,31 +92,31 @@
 
     <select id="listByMap" parameterType="map" resultMap="resultManage">
         select
-        <include refid="manage_field"/>
+        <include refid="Manage_field"/>
         from manage
         where 1=1
-        <include refid="manage_where"/>
+        <include refid="Manage_where"/>
     </select>
 
     <!--    查询整个类-->
     <select id="listAll" resultMap="resultManage">
         select
-        <include refid="manage_field"/>
+        <include refid="Manage_field"/>
         from manage
     </select>
     <!--    查询所有实体,根据实体属性值为判断条件查询所有实体-->
 
     <select id="listAllByEntity" parameterType="com.lyl.ssm.po.Manage" resultMap="resultManage">
         select
-        <include refid="manage_field"/>
+        <include refid="Manage_field"/>
         from manage
         where 1=1
-        <include refid="manage_where"/>
+        <include refid="Manage_where"/>
     </select>
 <!--    根据主键获取实体信息-->
     <select id="load" resultMap="resultManage" parameterType="java.lang.Integer">
         select
-        <include refid="manage_field"/>
+        <include refid="Manage_field"/>
         from manage
         where id=#{id}
     </select>
@@ -128,7 +128,7 @@
 
     <select id="getById" resultMap="resultManage" parameterType="java.lang.Integer">
         select
-        <include refid="manage_field"/>
+        <include refid="Manage_field"/>
         from manage
         where id=#{id}
     </select>
@@ -136,42 +136,42 @@
 <!--    通过map查询-->
     <select id="getByMap" parameterType="map" resultMap="resultManage">
         select
-        <include refid="manage_field"/>
+        <include refid="Manage_field"/>
         from manage
         where 1=1
-        <include refid="manage_where"/>
+        <include refid="Manage_where"/>
     </select>
     <!--    通过对象查询分页-不分页-->
     <select id="getByEntity" parameterType="com.lyl.ssm.po.Manage" resultMap="resultManage">
         select
-        <include refid="manage_field"/>
+        <include refid="Manage_field"/>
         from manage
         where 1=1
-        <include refid="manage_where"/>
+        <include refid="Manage_where"/>
     </select>
 
 <!--    通过map查询分页-->
     <select id="findByMap" parameterType="map" resultMap="resultManage">
         select
-        <include refid="manage_field"/>
+        <include refid="Manage_field"/>
         from manage
         where 1=1
-        <include refid="manage_where"/>
+        <include refid="Manage_where"/>
     </select>
 
 <!--    通过对象查询分页-->
     <select id="findByEntity" parameterType="com.lyl.ssm.po.Manage" resultMap="resultManage">
         select
-        <include refid="manage_field"/>
+        <include refid="Manage_field"/>
         from manage
         where 1=1
-        <include refid="manage_where"/>
+        <include refid="Manage_where"/>
     </select>
 
     <!--    批量新增-->
     <insert id="insertBatch" parameterType="java.util.List">
         insert into manage(
-        <include refid="manage_field"/>
+        <include refid="Manage_field"/>
         )values
         <foreach collection="list" index="index" item="item" separator=",">
             (#{item.userName},#{item.passWord},#{item.realName})
