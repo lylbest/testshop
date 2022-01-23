@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * 登录层
+ */
 @Controller
 @RequestMapping("/login")
 public class LoginController extends BaseController {

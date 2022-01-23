@@ -188,7 +188,7 @@
                 <if test="item.passWord!=null">
                     pid=#{item.pid}
                 </if>
-                <if test="item.realName!=null">
+                <if test="item.isDelete!=null">
                     isDelete=#{item.isDelete}
                 </if>
             </set>

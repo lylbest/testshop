@@ -1,5 +1,6 @@
 package com.lyl.ssm.controller;
 
+import com.lyl.ssm.base.BaseController;
 import com.lyl.ssm.po.ItemCategory;
 import com.lyl.ssm.service.ItemCategoryService;
 import com.lyl.ssm.utils.Pager;
@@ -11,9 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
+/**
+ * 类目层
+ */
 @Controller
 @RequestMapping("/itemCategory")
-public class ItemCategoryController {
+public class ItemCategoryController extends BaseController {
 
     @Autowired
     private ItemCategoryService itemCategoryService;
