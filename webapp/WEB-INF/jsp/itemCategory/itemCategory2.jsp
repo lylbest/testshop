@@ -13,7 +13,7 @@
     <div class="padding border-bottom">
         <ul class="search" style="padding-left: 10px;">
             <li>
-                <a href="${ctx}/itemCategory/add2?pid="+${obj.pid} class="button border-main icon-plus-square-o">新增二级类目</a>
+                <a href="${ctx}/itemCategory/add2?pid=${obj.pid}"  class="button border-main icon-plus-square-o">新增二级类目</a>
             </li>
         </ul>
     </div>
@@ -32,7 +32,7 @@
                         <a href="${ctx}/itemCategory/update2?id=${data.id}" class="button border-main">
                             <span class="icon-edit">修改</span>
                         </a>
-                        <a href="${ctx}/itemCategory/delete2?id=${data.id}&pid="+${data.pid} class="button border-red">
+                        <a href="${ctx}/itemCategory/delete2?id=${data.id}&pid=${data.pid}" class="button border-red">
                             <span class="icon-trash-o">删除</span>
                         </a>
 
